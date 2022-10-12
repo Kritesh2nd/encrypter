@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Template S</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/5045e83b56.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=M+PLUS+1+Code:wght@400&display=swap');
+      .mainbody{height:100vh;padding:20px;}
+      .outerContainer{width:800px;min-width: 300px;padding:15px;border-radius:4px;}
+      .layers{margin-bottom:15px;}
+      .layers:last-child{margin-bottom:5px;}
+      .layer1{font-family:var(--ff4);font-weight:400;font-size:24px;}
+
+      .l2rooms{width:50%;}
+      .l2rooms:first-child{padding-right:10px;}
+      .l2rooms:last-child{padding-left:10px;}
+      .l2rooms :where(textarea){width:100%;padding:10px;font-family:var(--ff9);font-size:16px;resize:none;height:240px;border-radius:3px;}
+      .passwordInput{padding:6px 10px;font-family:var(--ff9);font-size:16px;border-radius:3px;width:300px;}
+      .encdecBtn{padding:8px 20px;margin-right:15px;border-radius:3px;cursor: pointer;}
+      .iconBox{width:30px;padding:2px;}
+      .iconBtn{cursor: pointer;}
+      .iconBtn::before{content: "Read this: ";}
+    </style>
+  </head>
+  <body>
+    <div class="mainbody bor flex jcc aic">
+      <div class="outerContainer borx flex fdc">
+        <div class="layer1 layers titleBox bor flex jcc">Encrypter and Decrypter</div>
+        <div class="layer2 layers bor flex jcsb">
+          <div class="l2LftRoom l2rooms bor">
+            <textarea class="textInput borx1" placeholder="enter message....">#include <stdio.h>
+
+int main() {
+  printf("Cat's Paw.");
+}</textarea>
+          </div>
+          <div class="l2RitRoom l2rooms bor">
+            <textarea class="textOutput borx1"placeholder="result...."></textarea>
+          </div>
+        </div>
+        <div class="layer3 layers bor flex jcsb">
+          <input type="text" class="passwordInput borx1" value="abcd" placeholder="enter passcode...">
+          <div class="iconBox bor">
+            <abbr class="iconBoxAbbr" title="Copy"><img class="iconBtn" src="copy-paste.svg"/></abbr>
+          </div>
+        </div>
+        <div class="layer4 layers bor flex jcfs">
+          <div class="encryptBtn encdecBtn borx1">Encrypt</div>
+          <div class="decryptBtn encdecBtn borx1">Decrypt</div>
+        </div>
+      </div>
+    </div>
+    <!-- <script src="script2.js"></script> -->
+    <script src="script5.js"></script>
+  </body>
+</html>
+
+
+<!-- 
+i(b-V{fk]&}#{^Yt^`+`YAYiY)&|#Y&_Yk\\{&_}&T
+Hi i'm Kritesh Thapa & I live in Kusinti.
+  A digital signature is a mathematical technique used to validate the authenticity and integrity of a message, software or digital document. It's the digital equivalent of a handwritten signature or stamped seal, but it offers far more inherent security. A digital signature is intended to solve the problem of tampering and impersonation in digital communications.
+-->
