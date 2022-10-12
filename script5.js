@@ -15,8 +15,9 @@ const char1="ABCDEFGHIJKLMNOPQRSTUVWXYZ",
 char2="abcdefghijklmnopqrstuvwxyz",
 char3="`~!@#$%^&*()-_=+[]{}|;:',./<>?"+'"',
 char4=" "+"\n"+"\t"+"\\"+"\""+"\'";
-const char1Arr=char1.split(""),char2Arr=char2.split(""),char3Arr=char3.split(""),char4Arr=char4.split("");
-const allChars = char1Arr.concat(char2Arr).concat(char3Arr).concat(char4Arr);
+char5="0123456789";
+const char1Arr=char1.split(""),char2Arr=char2.split(""),char3Arr=char3.split(""),char4Arr=char4.split(""),char5Arr=char5.split("");
+const allChars = char1Arr.concat(char2Arr).concat(char3Arr).concat(char4Arr).concat(char5Arr);
 var textInputVal="",textOutputVal="",passInputVal="",codeCount=0;
 printAllChar();
 textInput.addEventListener('input',()=>{textInputManager();});
