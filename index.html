@@ -22,6 +22,15 @@
       .iconBox{width:30px;padding:2px;}
       .iconBtn{cursor: pointer;}
       .iconBtn::before{content: "Read this: ";}
+      @media only screen and (max-width: 600px) {
+        .outerContainer{width:100%;min-width: 100%;}
+        .layer2{flex-direction: column;}
+        .l2rooms{width:100%;padding:0;}
+        .l2rooms:first-child{padding-right:0px;padding-bottom:10px;}
+        .l2rooms:last-child{padding-left:0px;}
+        .l2rooms :where(textarea){height:200px;}
+        .passwordInput{margin-right:10px;}
+      }
     </style>
   </head>
   <body>
@@ -32,7 +41,7 @@
           <div class="l2LftRoom l2rooms bor">
             <textarea class="textInput borx1" placeholder="enter message....">#include <stdio.h>
 
-int main() {
+void main() {
   printf("Cat's Paw.");
 }</textarea>
           </div>
