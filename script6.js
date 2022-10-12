@@ -7,9 +7,12 @@ textOutput = document.querySelector(".textOutput"),
 passwordInput = document.querySelector(".passwordInput"),
 encryptBtn = document.querySelector(".encryptBtn"),
 decryptBtn = document.querySelector(".decryptBtn"),
-iconBtn = document.querySelector(".iconBtn"),
-iconBoxAbbr = document.querySelector(".iconBoxAbbr");
-// textInput = document.querySelector(".textInput");
+l2LftClearBtn = document.querySelector(".l2LftClearBtn"),
+l2RitClearBtn = document.querySelector(".l2RitClearBtn"),
+l2LftCopyBtn = document.querySelector(".l2LftCopyBtn"),
+l2RitCopyBtn = document.querySelector(".l2RitCopyBtn"),
+noNumMsg = document.querySelector(".noNumMsg");
+// noNumMsg = document.querySelector(".noNumMsg");
 // console.log("script 5");
 const char1="ABCDEFGHIJKLMNOPQRSTUVWXYZ",
 char2="abcdefghijklmnopqrstuvwxyz",
@@ -19,8 +22,8 @@ char5="0123456789",
 char6="`!"+"`#"+"`%"+"`&"+"`("+"`-";
 const char1Arr=char1.split(""),char2Arr=char2.split(""),char3Arr=char3.split(""),char4Arr=char4.split(""),char5Arr=char5.split("");
 const allChars = char1Arr.concat(char2Arr).concat(char3Arr).concat(char4Arr).concat(char5Arr);
-var textInputVal="",textOutputVal="",passInputVal="",codeCount=0;
-printAllChar();
+var textInputVal="",numCheckVal,textOutputVal="",passInputVal="",codeCount=0;
+// printAllChar();
 textInput.addEventListener('input',()=>{textInputManager();});
 textOutput.addEventListener('input',()=>{textOutputManager();});
 passwordInput.addEventListener('input',()=>{passwordManager();});
@@ -47,9 +50,9 @@ function textOutputManager(){
 function passwordManager(){
   var a,b;
   passInputVal=JSON.stringify(passwordInput.value).split("");
-  passInputVal=passInputVal.slice(1,passInputVal.length-1);
+  passInputVal=passInputVal.slice(1,passInputVal.length-1);  
   for(a=0;a<passInputVal.length;a++){for(b=0;b<allChars.length;b++){if(passInputVal[a]==allChars[b]){passInputVal[a]=b;break;}}}
-  console.log(passInputVal);
+
 }
 encryptBtn.addEventListener('click',()=>{
   codeCount=0;
@@ -59,8 +62,17 @@ decryptBtn.addEventListener('click',()=>{
   codeCount=0;
   decryptThis();
 });
-iconBtn.addEventListener('click',()=>{
-  copyPaste();
+l2LftClearBtn.addEventListener('click',()=>{
+  textInput.value="";
+})
+l2RitClearBtn.addEventListener('click',()=>{
+  textOutput.value="";
+})
+l2LftCopyBtn.addEventListener('click',()=>{
+  copyPaste(textInput);
+});
+l2RitCopyBtn.addEventListener('click',()=>{
+  copyPaste(textOutput);
 });
 function encryptThis(){
   var a,b,c=[],d,e;
@@ -122,9 +134,8 @@ function remakeArray(letter,num,arr,exc){
   if(letter==exc&&arr[num-1]=="\\"){returnVal="rmv";}
   return returnVal;
 }
-function copyPaste(){
-  textOutput.select();
-  textOutput.setSelectionRange(0, 99999);
-  navigator.clipboard.writeText(textOutput.value);
-  iconBoxAbbr.titel = "Copied";
+function copyPaste(whichOne){
+  whichOne.select();
+  whichOne.setSelectionRange(0, 99999);
+  navigator.clipboard.writeText(whichOne.value);
 }

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Encrypter & Decrypter | Kritesh Thapa</title>
+    <title>Template S</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/5045e83b56.js"></script>
     <link rel="stylesheet" href="style.css">
@@ -19,9 +19,12 @@
       .l2rooms :where(textarea){width:100%;padding:10px;font-family:var(--ff9);font-size:16px;resize:none;height:240px;border-radius:3px;}
       .passwordInput{padding:6px 10px;font-family:var(--ff9);font-size:16px;border-radius:3px;width:300px;}
       .encdecBtn{padding:8px 20px;margin-right:15px;border-radius:3px;cursor: pointer;}
-      .iconBox{width:30px;padding:2px;}
-      .iconBtn{cursor: pointer;}
-      .iconBtn::before{content: "Read this: ";}
+      /* .iconBox{width:30px;padding:2px;} */
+      .l2LftBtnRoom,.l2RitBtnRoom{padding-bottom:6px;}
+      .l2ClearBtn{padding:3px  10px;border-radius:3px;cursor: pointer;margin-right:10px;}
+      .l2LftCopyBtn,.l2RitCopyBtn{width:28px;padding:2px;}
+      .l3UprRoom{padding-bottom:5px;}
+      .noNumMsg{margin-left:15px;}
       @media only screen and (max-width: 600px) {
         .outerContainer{width:100%;min-width: 100%;}
         .layer2{flex-direction: column;}
@@ -29,7 +32,9 @@
         .l2rooms:first-child{padding-right:0px;padding-bottom:10px;}
         .l2rooms:last-child{padding-left:0px;}
         .l2rooms :where(textarea){height:200px;}
-        .passwordInput{margin-right:10px;}
+        .passwordInput{width:100%;}
+        .leBtmRoom{flex-direction: column;}
+        .noNumMsg{margin-left:0;padding-top:8px;}
       }
     </style>
   </head>
@@ -38,21 +43,38 @@
       <div class="outerContainer borx flex fdc">
         <div class="layer1 layers titleBox bor flex jcc">Encrypter and Decrypter</div>
         <div class="layer2 layers bor flex jcsb">
-          <div class="l2LftRoom l2rooms bor">
-            <textarea class="textInput borx1" placeholder="enter message....">#include <stdio.h>
-
-void main() {
-  printf("Cat's Paw.");
-}</textarea>
+          <div class="l2LftRoom l2rooms bor flex fdc">
+            <div class="l2LftBtnRoom bor flex jcfe aic">
+              <div class="l2LftClearBtn l2ClearBtn borx2">Clear</div>
+              <div class="l2LftCopyBtn l2CopyBtn bor flex aic jcc">
+                <abbr class="iconBoxAbbr bor w100" title="Copy"><img class="iconBtn" src="copy-paste.svg"/></abbr>
+              </div>
+            </div>
+            <textarea class="textInput borx1" placeholder="enter message....">public class Main {
+  public static void main(String[] args) {
+    System.out.println("Hi! I'm kritesh.");
+    System.out.println("Nice to meet you.");
+  }
+}
+</textarea>
           </div>
-          <div class="l2RitRoom l2rooms bor">
+          <div class="l2RitRoom l2rooms bor flex fdc">
+            <div class="l2RitBtnRoom bor flex jcfe aic">
+              <div class="l2RitClearBtn l2ClearBtn borx2">Clear</div>
+              <div class="l2RitCopyBtn l2CopyBtn bor flex aic jcc">
+                <abbr class="iconBoxAbbr bor w100" title="Copy"><img class="iconBtn" src="copy-paste.svg"/></abbr>
+              </div>
+            </div>
             <textarea class="textOutput borx1"placeholder="result...."></textarea>
           </div>
         </div>
-        <div class="layer3 layers bor flex jcsb">
-          <input type="text" class="passwordInput borx1" value="abcd" placeholder="enter passcode...">
-          <div class="iconBox bor">
-            <abbr class="iconBoxAbbr" title="Copy"><img class="iconBtn" src="copy-paste.svg"/></abbr>
+        <div class="layer3 layers bor flex fdc">
+          <div class="l3UprRoom flex">
+            Password
+          </div>
+          <div class="leBtmRoom flex jcfs">
+            <input type="text" class="passwordInput borx1" value="ThisIsPassword" placeholder="enter passcode...">
+            <div class="noNumMsg bor flex aic jcc">Don't use number as password, it dosen't work properly</div>
           </div>
         </div>
         <div class="layer4 layers bor flex jcfs">
@@ -62,7 +84,7 @@ void main() {
       </div>
     </div>
     <!-- <script src="script2.js"></script> -->
-    <script src="script5.js"></script>
+    <script src="script6.js"></script>
   </body>
 </html>
 
