@@ -11,8 +11,10 @@ l2LftClearBtn = document.querySelector(".l2LftClearBtn"),
 l2RitClearBtn = document.querySelector(".l2RitClearBtn"),
 l2LftCopyBtn = document.querySelector(".l2LftCopyBtn"),
 l2RitCopyBtn = document.querySelector(".l2RitCopyBtn"),
-noNumMsg = document.querySelector(".noNumMsg");
-// noNumMsg = document.querySelector(".noNumMsg");
+l3URicon = document.querySelector(".l3URicon"),
+iconBtnShow = document.querySelector(".iconBtnShow"),
+iconBtnHide = document.querySelector(".iconBtnHide");
+// iconBtnShow = document.querySelector(".iconBtnShow");
 // console.log("script 5");
 const char1="ABCDEFGHIJKLMNOPQRSTUVWXYZ",
 char2="abcdefghijklmnopqrstuvwxyz",
@@ -23,6 +25,7 @@ char6="`!"+"`#"+"`%"+"`&"+"`("+"`-";
 const char1Arr=char1.split(""),char2Arr=char2.split(""),char3Arr=char3.split(""),char4Arr=char4.split(""),char5Arr=char5.split("");
 const allChars = char1Arr.concat(char2Arr).concat(char3Arr).concat(char4Arr).concat(char5Arr);
 var textInputVal="",textInputValX="",textInputValY="",textInputValZ="",numCheckVal,textOutputVal="",passInputVal="",codeCount=0;
+var hidePW=true;
 // printAllChar();
 textInput.addEventListener('input',()=>{textInputManager();});
 textOutput.addEventListener('input',()=>{textOutputManager();});
@@ -77,6 +80,9 @@ l2LftCopyBtn.addEventListener('click',()=>{
 l2RitCopyBtn.addEventListener('click',()=>{
   copyPaste(textOutput);
 });
+l3URicon.addEventListener('click',()=>{
+  hidePassword();
+});
 function encryptThis(){
   var a,b,c=[],d,e;
   var txtInpValCode=[],outValCode=[],shiftCode=99;
@@ -101,10 +107,7 @@ function decryptThis(){
   var a,b,c;
   var txtInpValCode=[],outValCode=[],shiftCode=99;
   
-  console.log("hello",idk1());
-  // console.log(textInputVal.length,textInputVal.split(""));
-  // console.log(textInputValX.length,textInputValX);
-  // console.log(textInputValY.length,textInputValY);
+  textInputVal=textProcessor2();
   for(a=0;a<textInputVal.length;a++){
     for(b=0;b<allChars.length;b++){
       if(textInputVal[a]==allChars[b]){
@@ -147,13 +150,38 @@ function copyPaste(whichOne){
   whichOne.setSelectionRange(0, 99999);
   navigator.clipboard.writeText(whichOne.value);
 }
-
-
-function idk1(){
+function textProcessor1(){
   var a,tempZ1=[];
   for(a=0;a<textInputValZ.length;a++){
     tempZ1[a]="$"+textInputValZ[a];
   }
-  console.log(textInputValZ.length);
+  console.log(textInputValZ.length,0,"~",textInputValZ.length-1);
   return tempZ1;
+}
+function textProcessor2(){
+  var tp2temp1=textProcessor1(),tp2temp2=[];
+  var a;
+  for(a=0;a<tp2temp1.length;a++){
+    // console.log(a,tp2temp1[a])
+    tp2temp2=tp2temp1.map(removeExtra) 
+  }
+  console.log(tp2temp2);
+  return tp2temp2;
+}
+function removeExtra(item,count){
+  return item[1];
+}
+function hidePassword(){
+  if(hidePW){
+    iconBtnShow.style.display = "none";
+    iconBtnHide.style.display = "block";
+    passwordInput.type="text";
+    hidePW=false;
+  }
+  else{
+    iconBtnShow.style.display = "block";
+    iconBtnHide.style.display = "none";
+    passwordInput.type="password";
+    hidePW=true;
+  }
 }

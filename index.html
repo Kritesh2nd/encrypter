@@ -23,7 +23,8 @@
       .l2LftBtnRoom,.l2RitBtnRoom{padding-bottom:6px;}
       .l2ClearBtn{padding:3px  10px;border-radius:3px;cursor: pointer;margin-right:10px;}
       .l2LftCopyBtn,.l2RitCopyBtn{width:28px;padding:2px;}
-      .l3UprRoom{padding-bottom:5px;}
+      .l3UprRoom{padding-bottom:5px;width:300px;}
+      .l3URicon{width:20px;height:20px;cursor: pointer;}
       .l2Tile{padding-bottom:8px;}
       .noNumMsg{margin-left:15px;}
       @media only screen and (max-width: 600px) {
@@ -76,12 +77,16 @@
           </div>
         </div>
         <div class="layer3 layers bor flex fdc">
-          <div class="l3UprRoom flex">
-            Password
+          <div class="l3UprRoom flex jcsb">
+            <div class="l3URtext">Password</div>
+            <div class="l3URicon bor flex">
+              <img class="iconBtnShow bor" src="eye.svg"/>
+              <img class="iconBtnHide none bor" src="eye-slash.svg"/>
+            </div>
           </div>
           <div class="leBtmRoom flex jcfs">
-            <input type="text" class="passwordInput borx1" value="ThisIsPassword" placeholder="enter passcode...">
-            <div class="noNumMsg bor flex aic jcc">Don't use number as password, it dosen't work properly</div>
+            <input type="password" class="passwordInput borx1" value="ThisIsPassword" placeholder="enter passcode...">
+            <div class="noNumMsg bor flex aic jcc none">Don't use number as password, it dosen't work properly</div>
           </div>
         </div>
         <div class="layer4 layers bor flex jcfs">
@@ -91,7 +96,7 @@
       </div>
     </div>
     <!-- <script src="script2.js"></script> -->
-    <script src="script6.js"></script>
+    <script src="script7.js"></script>
   </body>
 </html>
 
